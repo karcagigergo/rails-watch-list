@@ -1,1 +1,4 @@
-<%= render "form", movie: @list %>
+<%= simple_form_for(list) do |f| %>
+  <%= f.input :name %>
+  <%= f.submit %>
+<% end %>
