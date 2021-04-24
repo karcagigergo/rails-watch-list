@@ -1,7 +1,8 @@
+<h1>Save any kind of movies!</h1>
 <ul>
   <% @lists.each do |list| %>
     <li><%= link_to list.name, list_path(list) %></li>
   <% end %>
 </ul>
 
-<li><%= link_to 'Create a new list', new_list_path(@list) %></li>
+<%= link_to 'Create a new list', new_list_path(@list), class: "btn btn-primary" %>
