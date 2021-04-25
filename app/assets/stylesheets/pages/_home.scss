@@ -1,1 +1,25 @@
 // Specific CSS for your home-page
+body, html {
+  height: 100%;
+}
+
+.banner-home {
+  /* The image used */
+  background-image: url("https://source.unsplash.com/evlkOfkQ5rE/1600x900).jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner-home h1 {
+  margin: 0;
+  color: white;
+  font-size: 62px;
+  font-weight: 200;
+  letter-spacing: 4px;
+  font-family: 'Poiret One', cursive;
+}
