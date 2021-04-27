@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 2021_04_26_001423) do
 
   create_table "lists", force: :cascade do |t|
     t.text "name"
-    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
   end
 
   create_table "movies", force: :cascade do |t|
