@@ -37,7 +37,7 @@
     <% @list.movies.each do |movie| %>
       <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
       <div class="col-12 col-md-6 col-lg-6">
-        <div class="card-trip mb-4">
+        <div class="card-trip mb-4" data-aos="flip-left">
           <%= image_tag movie.poster_url, alt: movie.title %>
             <div class="card-trip-infos">
               <div>
