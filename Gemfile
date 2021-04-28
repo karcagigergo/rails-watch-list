@@ -27,6 +27,7 @@ gem 'simple_form'
 gem 'faker'
 gem 'open-uri'
 gem 'json'
+gem 'dotenv-rails', groups: [:development, :test]
 
 
 # Use Active Storage variant
