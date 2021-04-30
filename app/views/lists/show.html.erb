@@ -25,7 +25,7 @@
       letter-spacing: 4px;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
       font-family: 'Poiret One', cursive;"><%= @list.name %></h1>
-    <h4 class="mb-2 d-block"><em><%= "You haven't saved any movies yet!" if @list.movies.empty? %></em></h4>
+    <h4 class="mb-2"><em><%= "You haven't saved any movies yet!" if @list.movies.empty? %></em></h4>
     <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn btn-success mt-4' %>
   </div>
 </div>
@@ -56,4 +56,33 @@
     <% end %>
   </div>
 </div>
-
+<hr class="my-5">
+<div class="container" id="big-container">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-6">
+      <h3>Reviews</h3>
+      <hr>
+      <p class="mb-2"><em><%= "Hmmmm... looks like there are no reviews yet. Add one!" if @list.reviews.empty? %></em></p>
+      <% @list.reviews.each do |review| %>
+        <div>
+          <% review.rating.times do %>
+            <i class="fas fa-star star-yellow"></i>
+          <% end %>
+          <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+          <p class="mb-0"><%= review.comment %></p>
+        </div>
+        <hr>
+      <% end %>
+    </div>
+    <div class="col-12 col-md-6 col-lg-6">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Add a new review</h3>
+        <%= simple_form_for [ @list, @review ] do |f| %>
+          <%= f.input :comment, label: 'Add your review here..' %>
+          <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
+          <%= f.submit class: 'btn btn-primary'%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
