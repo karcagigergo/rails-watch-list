@@ -49,7 +49,7 @@
               <div>
                 <i class="fas fa-quote-left mr-2"></i><small><%= bookmark.comment %></small>
               </div>
-              <small class="text-right flex-shrink-0"><%= link_to 'delete', list_path(@list), method: :delete, data: { confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list"}, class: 'text-danger' %></small>
+              <small class="text-right flex-shrink-0"><%= link_to "Delete", bookmark_path(bookmark), :confirm => "Are you sure?", :method => :delete %></small>
             </div>
         </div>
       </div>
@@ -69,7 +69,7 @@
             <i class="fas fa-star star-yellow"></i>
           <% end %>
           <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
-          <p class="mb-0"><%= review.comment %></p>
+          <p><%= review.comment %></p>
         </div>
         <hr>
       <% end %>
