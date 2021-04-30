@@ -62,16 +62,7 @@ ActiveRecord::Schema.define(version: 2021_04_30_000616) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.text "content"
-    t.bigint "list_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["list_id"], name: "index_reviews_on_list_id"
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookmarks", "lists"
   add_foreign_key "bookmarks", "movies"
-  add_foreign_key "reviews", "lists"
 end
